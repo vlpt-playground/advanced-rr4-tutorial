@@ -13,6 +13,8 @@ const env = getClientEnvironment(publicUrl);
 
 module.exports = {
   entry: paths.serverRenderJs,
+  // Node.js 내장 모듈과 충돌이 일어나지 않으며 require 로 불러올 수 있는 형태로 번들링합니다
+  target: 'node',
   output: {
     // 정해준 서버 경로에 render.js 라는 파일명으로 저장합니다
     path: paths.server,
